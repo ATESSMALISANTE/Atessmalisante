@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/889dacf975.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>ATSSSM</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    *{padding: 0;margin: 0;text-decoration: none;}
+    .LIEN{
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        align-items: center;
+    }
+    .imglien{
+        margin-left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    .header{
+        width: 100%;
+        height: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo nav nav";
+        background-color: green;
+    }
+    .logo{
+        grid-area: logo;
+    }
+    .imglogo{
+        margin-left: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .nav{
+        grid-area: nav;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .alien{
+        color: black;
+    }
+    .alien:hover{
+        color: white;
+    }
+    .hero{
+        width: 100%;
+    }
+    .imghero{
+        width: 100%;
+        height: 600px;
+    }
+    .aprops{
+        width: 100%;
+    }
+    .titre{
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        background: rgb(30,179,91);
+        background: linear-gradient(90deg, rgba(30,179,91,1) 21%, rgba(42,224,36,1) 49%, rgba(129,205,14,1) 84%);
+        font-size: 32px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    .textApropos{
+        margin-top: 20px;
+            text-align: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .TitreA{
+            font-size: 28px;
+        }
+        .SERVICES{
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .serv{
+            width: 200px;
+        }
+        .imgserv{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .textserv{
+            color: white;
+            text-align: center;
+            align-items: center;
+        }
+        .Comment1{
+            text-align: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: black;
+            background-color: rgb(0, 174, 255);
+        }
+        .Comment2{
+            text-align: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: black;
+            background-color: rgb(7, 57, 222);
+            color: white;
+        }
+        .cI{
+            width: 100%;
+        }
+        .divEquipes{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .equip{
+            width: 200px;
+            height: 250px;
+            margin-top: 15px;
+        }
+        .imgper{
+            border-radius: 10px;
+            width: 200px;
+            height: 150px;
+        }
+        .name{
+            width: 200px;
+            height: 70px;
+            background-color: rgb(205, 202, 202);
+            text-align: center;
+            border-radius: 10px;
+        }
+        .nameper{
+            width: 200px;
+            height: 35px;
+            font-size: 22px;
+        }
+        .foctper{
+            width: 200px;
+            height: 35px;
+        }
+        .Gequip{
+            margin-top: 20px;
+            width: 100%;
+            height: 500px;
+        }
+        .Gimgper{
+            width: 100%;
+            height: 500px;
+        }
+        .cont{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "lescontacts carte";
+        }
+        .lescontacts{
+            margin-top: 10px;
+            grid-area: lescontacts;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .lienC{
+            color: white;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .carte{
+            margin-top: 10px;
+            background-color: yellow;
+            grid-area: carte;
+        }
+        #partenaires{
+            margin-top: 10px;
+        }
+        .imgPart{
+            width: 170px;
+            height: 100px;
+        }
+        .lesPartenaires{
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .containerInput{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .boxInput{
+            width: 80%;
+            display: grid;
+            align-items: center;
+        }
+        input{
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+        textarea{
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        .envoyer{
+            width: 40%;
+            margin-bottom: 10px;
+        }
+        label{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            color: white;
+        }
+        #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 65px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+#myBtn:hover {
+    background-color: rgb(4, 182, 4);
+}
+.footer{
+    width: 100%;
+    background-color: rgb(3, 76, 3);
+}
+.lienfooter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.mainNavFooter{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    }
+.navFooter{
+    color: white;
+    font-size: 16px;
+}
+.textDroits{
+            text-align: center;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+        }
+        .publicite{
+            width: 100%;
+            height: 100px;
+            background-color: red;
+        }
+    @media(max-width:768px) {
+        .imghero{
+        width: 100%;
+        height: 300px;
+    }
+        .serv{
+            width: 150px;
+        }
+        .imgserv{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .equip{
+            width: 150px;
+            height: 250px;
+            margin-top: 15px;
+        }
+        .imgper{
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+        }
+        .name{
+            width: 150px;
+            height: 100px;
+            background-color: rgb(205, 202, 202);
+            text-align: center;
+            border-radius: 10px;
+        }
+        .nameper{
+            width: 150px;
+            height: 45px;
+            font-size: 18px;
+        }
+        .foctper{
+            width: 150px;
+            height: 45px;
+        }
+        .Gequip{
+            margin-top: 20px;
+            width: 100%;
+            height: 300px;
+        }
+        .Gimgper{
+            width: 100%;
+            height: 300px;
+        }
+        .cont{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "lescontacts" "carte";
+        }
+    }
+</style>
+<body>
+    <section class="LIEN">
+        <a href="https://www.facebook.com/Association-des-Technicien-de-Surface-secteur-de-santé-au-Mali-Ats-Ssm-113661761560428" class="lien"><img class="imglien" src="images/icons/facebook.png" alt=""></a>
+        <a href="https://wa.me/223" class="lien"><img class="imglien" src="images/icons/whatsapp.png" alt=""></a>
+        <a href="https://www.tiktok.com/@atsssmmali" class="lien"><img class="imglien" src="images/icons/tic-tac-2.png" alt=""></a>
+        <a href="mailto:atsssmmali@gmail.com" class="lien"><img class="imglien" src="images/icons/gmail.png" alt=""></a>
+    </section>
+    <section class="header">
+        <div class="logo"><img src="images/2:2.png" alt="" class="imglogo"></div>
+        <div class="nav">
+            <a href="#aprops" class="alien">Apropos</a>
+            <a href="#service" class="alien">Service</a>
+            <a href="#Equipes" class="alien">Équipes</a>
+            <a href="#contacts" class="alien">Contacts</a>
+        </div>
+    </section>
+    <section class="hero"><img class="imghero" src="images/fontImg.jpg" alt=""></section>
+    <section id="aprops">
+        <h1 class="titre">Qui nous sommes</h1>
+        <p class="textApropos">
+            <span class="TitreA">ASSOCIATION DES TECHNICIENS DE SERFACE SECTEUR SANTE AU MALI</span><br>
+            Est un association des Techniciens (Agent d'entretien, maintenance ou Agent de propriété et d'hygiène, au saint des structures). Il est charge du transport des malades, du nettoyage Des blocs opératoires, de l'entretien des blouses et chant opératoire...Ect.
+        </p>
+    </section>
+    <section id="service" class="service">
+        <h1 class="titre">Nos Services</h1>
+        <div class="SERVICES">
+            <div class="serv">
+                <img class="imgserv" src="images/services/nottoyage.jpg" alt="">
+                <h3 class="textserv">Bionettoyage Hôpitaux</h3>
+            </div>
+            <div class="serv">
+                <img class="imgserv" src="images/services/aidons.jpg" alt="">
+                <h3 class="textserv">Aidez Les Patients</h3>
+            </div>
+            <div class="serv">
+                <img class="imgserv" src="images/services/technicien.jpeg" alt="">
+                <h3 class="textserv">Techniciens</h3>
+            </div>
+            <div class="serv">
+                <img class="imgserv" src="images/services/ambulance.jpg" alt="">
+                <h3 class="textserv">Solutions d’accès pour les établissements dans le secteur de la santé</h3>
+            </div>
+            <p class="Comment1">Le nettoyage des hôpitaux, des cliniques, des laboratoires et des cabinets des professionnels de santé, doit faire l'objet d'une attention particulière en raison des risques importants de contamination et de maladies nosocomiales.</p>
+            <p class="Comment2" >Nos agents de propreté en milieu hospitalier ont suivi une formation adaptée. En plus des protocoles de nettoyages conventionnels, des connaissances en chimie et microbiologie leur ont été également dispensés.</p>
+        </div>
+    </section>
+    <section id="ACTIALITE" class="ACTIALITE">
+        <h1 class="titre">Nos Actualités</h1>
+        <div class="imageActialite">
+            <img src="images/c1.jpeg" alt="" class="cI imgact1">
+            <img src="images/c2.jpeg" alt="" class="cI imgact2">
+            <img src="images/c3.jpeg" alt="" class="cI imgact3">
+        </div>
+    </section>
+    <section id="Equipes" class="Equipes">
+        <h1 class="titre">Nos Équipes</h1>
+        <div class="divEquipes">
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Mamadou Ballo</h2>
+                    <p class="foctper">Président</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Moussa Dembele</h2>
+                    <p class="foctper">Vice-Président</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Moussa Keita</h2>
+                    <p class="foctper">Secrétaire Général</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Aminata Traoré</h2>
+                    <p class="foctper">Trésoies Général</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Fousseyni Fofana</h2>
+                    <p class="foctper">Trésorier Adjoint 1e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Sabou Sidibé</h2>
+                    <p class="foctper">Trésorier Adjoint 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Seydou Traoré</h2>
+                    <p class="foctper">Commissaire aux Comptes</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Aboubacar Ongoiba</h2>
+                    <p class="foctper">Commissaire aux Comptes Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Lalaicha Sidibé</h2>
+                    <p class="foctper">Commissaire aux Comptes Adjoint 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Moussa Kassogue</h2>
+                    <p class="foctper">Secrétaire Administratif</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Korotoumou Traoré</h2>
+                    <p class="foctper">Secrétaire Administratif Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Ibrahim Samake</h2>
+                    <p class="foctper">Secretaire Administratif Adjoint 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Christophe Tienou</h2>
+                    <p class="foctper">Secretaire Administratif Adjoint 3e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Issa Diarra</h2>
+                    <p class="foctper">Secrétaire A LA Communication</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Vegeuwélé Camara</h2>
+                    <p class="foctper">Secrétaire A LA Communication Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Fatoumata Dicko Sidibé</h2>
+                    <p class="foctper">Secrétaire A L'organisation</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Mariam Dagnoko</h2>
+                    <p class="foctper">Secrétaire A L'organisation Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Seyleymane Maiga</h2>
+                    <p class="foctper">Secrétaire A L'organisation 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Hawa Sidibé</h2>
+                    <p class="foctper">Secrétaire A L'organisation 3e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Jean André Toe</h2>
+                    <p class="foctper">Secrétaire Au Conflit</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Daouda Sogoba</h2>
+                    <p class="foctper">Secrétaire Au Conflit Adjont</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Moussa Maiga</h2>
+                    <p class="foctper">Secrétaire Aux Relation Extérieures</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Djenebou Dembele</h2>
+                    <p class="foctper">Secrétaire Aux Relation Extérieures Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Baba Touré</h2>
+                    <p class="foctper">Secrétaire Aux Relation Extérieures Adjoint 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Daouda Dara</h2>
+                    <p class="foctper">Secrétaire De La Santé Et L'Hygiène</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Aminata Keita</h2>
+                    <p class="foctper">Secrétaire De La Santé Et L'Hygiène Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Djedi Diallo</h2>
+                    <p class="foctper">Secrétaire De La Santé Et L'Hygiène 2e</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Dramane Sogoba</h2>
+                    <p class="foctper">Secrétaire Aux Affaire Sociales</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Sounkalo Coulibaly</h2>
+                    <p class="foctper">Secrétaire Aux Affaire Sociales Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Maimouna Sanogo</h2>
+                    <p class="foctper">Secrétaire De La Promotion Féminine Et Des Enfants</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Sadio Touré</h2>
+                    <p class="foctper">Secrétaire De La Promotion Féminine Et Des Enfants Adjoint</p>
+                </div>
+            </div>
+            <div class="equip">
+                <img src="images/retirer-photo-de-profil-facebook.png" alt="" class="imgper">
+                <div class="name">
+                    <h2 class="nameper">Oumar Keita</h2>
+                    <p class="foctper">Secrétaire Aux Affaires Religieuses des Cultes</p>
+                </div>
+            </div>
+            <div class="Gequip">
+                <img src="images/groupe.jpeg" alt="" class="Gimgper">
+            </div>
+        </div>
+    </section>
+    <section id="contacts" class="contacts">
+        <h1 class="titre">Nos Contacts</h1>
+        <div class="cont">
+            <div class="lescontacts">
+                <a href="https://www.facebook.com/Association-des-Technicien-de-Surface-secteur-de-santé-au-Mali-Ats-Ssm-113661761560428" class="lienC"><img class="imglien" src="images/icons/facebook.png" alt="">FACEBOOK</a>
+                <a href="https://wa.me/223" class="lienC"><img class="imglien" src="images/icons/whatsapp.png" alt="">WHATSAPP</a>
+                <a href="https://www.tiktok.com/@atsssmmali" class="lienC"><img class="imglien" src="images/icons/tic-tac-2.png" alt="">TIKTOK</a>
+                <a href="mailto:atsssmmali@gmail.com" class="lienC"><img class="imglien" src="images/icons/gmail.png" alt="">MAIL</a>
+                <a href="tel:+22374616195" class="lienC"><img class="imglien" src="images/icons/appel-telephonique.png" alt="">+223 74 61 61 95</a>
+                <a href="tel:+22390343699" class="lienC"><img class="imglien" src="images/icons/appel-telephonique.png" alt="">+223 90 34 36 99</a>
+            </div>
+            <div class="carte">carte
+
+            </div>
+        </div>
+    </section>
+    <section id="partenaires" class="partenaires">
+            <h1 class="titre">Nos Partenaires</h1>
+        <div class="lesPartenaires">
+                <div class="boxS">
+                    <img class="imgPart" src="images/partenaires/INPS.jpg" alt="">
+                </div>
+                <div class="boxS">
+                    <img class="imgPart" src="images/partenaires/minisairedelasante.jpeg" alt="">
+                </div>
+                <div class="boxS">
+                    <img class="imgPart" src="images/partenaires/OMS.jpg" alt="">
+                </div>
+        </div>
+    </section>
+    <section id="joindre" class="joindre">
+        <h1 class="titre">Nous Joindre</h1>
+        <div class="containerInput">
+            <form method="post" class="boxInput">
+                <label for="">Nom et prenom</label>
+                <input type="text" class="iname" id="name" placeholder="Nom et Prenom"><br>
+                <label for="">Mail</label>
+                <input type="email" class="imail" id="mail" placeholder="Mail"><br>
+                <label for="">Telephone</label>
+                <input type="text" class="iphone" id="phone" placeholder="Telephone"><br>
+                <label for="">Message</label>
+                <textarea id="message" placeholder="message" class="imessage" cols="30" rows="10"></textarea>
+                <input type="submit" onclick="sendToWhatsapp()" class="envoyer" value="ENVOYER">
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="lienfooter">
+            <a href="https://www.facebook.com/Association-des-Technicien-de-Surface-secteur-de-santé-au-Mali-Ats-Ssm-113661761560428" class="lienf"><img class="imglien" src="images/icons/facebook.png" alt=""></a>
+            <a href="https://wa.me/223" class="lienf"><img class="imglien" src="images/icons/whatsapp.png" alt=""></a>
+            <a href="https://www.tiktok.com/@atsssmmali" class="lienf"><img class="imglien" src="images/icons/tic-tac-2.png" alt=""></a>
+            <a href="mailto:atsssmmali@gmail.com" class="lienf"><img class="imglien" src="images/icons/gmail.png" alt=""></a>
+        </div>
+        <div class="mainNavFooter">
+            <a class="navFooter" href="#aprops">A propos</a>
+            <a class="navFooter" href="#service">Services</a>
+            <a class="navFooter" href="#Equipes">Équipes</a>
+            <a class="navFooter" href="#contacts">Contacts</a>
+            <a class="navFooter" href="#ACTIALITE">Actualités</a>
+        </div>
+        <div class="droits">
+            <p class="textDroits">Copyright © 2023 Tous droits réservés.</p>
+        </div>
+    </div>
+    </section>
+    <section class="publicite"></section>
+    <!-- Button aller haut de la page -->
+<button onclick="topFunction()" id="myBtn" title="Aller en haut"><i class="fa-solid fa-angles-up"></i></button> 
+<!-- JS button aller haut de la page -->
+<script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+</script>
+</script>
+<!-- Whatsapp -->
+<script src="https://webaxen.com/js/jquery3.6.min.js"></script>
+<script src="https://webaxen.com/js/bootstrap.bundle.min.js"></script>
+<script src="https://webaxen.com/js/owl.carousel.min.js"></script>
+<script src="https://webaxen.com/js/script.js"></script>
+<script>
+    function sendToWhatsapp(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("mail").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+        var url = "https://wa.me/223?text="
++"*Name :* "+name+"."
++"*Email :* "+email+"."
++"*Phone :* "+phone+"."
++"*Message :* "+message;
+ 
+window.open(url,'_blank').focus();
+}
+</script>
+</body>
+</html>
